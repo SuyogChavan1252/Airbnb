@@ -1,0 +1,105 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wanderlust</title>
+</head> -->
+<%layout("layouts/boilerplate")%>
+<body>
+   
+      
+        <div class="row mt-2">
+            <div class="col-8 offset-2">
+                
+                <h3>Edit Listing</h3>
+              <form method="post" action="/listings/<%=listing._id%>?_method=put" class="needs-validation" novalidate enctype="multipart/form-data"> 
+                <div class="mb-3">
+                  <label for="title" class="form-label">Title</label>
+                  <input
+                    name="listing[title]"
+                    placeholder="Enter title"
+                    type="text"
+                    class="form-control"
+                    required
+                    value="<%=listing.title%>"
+                  />
+                  <div class="valid-feedback">Title looks good</div>
+          <div class="invalid-feedback">Enter valid title</div>
+                </div>
+        
+                <div class="mb-3">
+                  <label for="description" class="form-label">Description</label>
+                  <textarea
+                    name="listing[description]"
+                    placeholder="Enter description"
+                    class="form-control"
+                    required
+                  > <%=listing.description%>
+                  </textarea>
+                  <div class="invalid-feedback">Enter short description</div>
+                </div>
+                <div class="mb-3">
+                  Original Image<br>
+                  <img src="<%=listing.image.url%>" height="150px" width="250px" style="filter: blur(0.8px);">
+                </div>
+                <div class="mb-3">
+                  <label for="image" class="form-label">Upload New Image</label>
+                  <input
+                    name="listing[image]"
+                    type="file"
+                    class="form-control"
+                   
+                  />
+                  <div class="invalid-feedback">Enter valid url/link</div>
+                </div>
+    
+                <!-- price ani country 1katach anayla parat row ker -->
+                <div class="row">
+                    <!-- medium size nntr 0-4 col ghe  -->
+                  <div class="mb-3  col-md-4">
+                    <label for="title" class="form-label">Price</label>
+                    <input
+                      name="listing[price]"
+                      placeholder="Enter price"
+                      type="number"
+                      class="form-control"
+                      required
+                      value="<%=listing.price%>"
+                    />
+                    <div class="invalid-feedback">Enter valid price</div>
+                  </div>
+                  <div class="mb-3  col-md-8">    
+                    <!-- medium nntr 5-8 col gheude hi condition  -->
+                    <label for="country" class="form-label">country</label>
+                    <input
+                      name="listing[country]"
+                      placeholder="Enter country"
+                      type="text"
+                      class="form-control"
+                      required
+                      value="<%=listing.country%>"
+                    />
+                    <div class="invalid-feedback">Enter valid country</div>
+                  </div>
+                      
+                <div class="mb-3">
+                    <label for="location" class="form-label">Location</label>
+                    <input
+                      name="listing[location]"
+                      placeholder="Enter location"
+                      type="text"
+                      class="form-control"
+                      value="<%=listing.location%>"
+                      required
+                    />
+                  </div>
+                  <div class="invalid-feedback">Enter valid location</div>
+                </div>
+                
+                <button class="btn btn-dark edit-btn">Edit</button><br><br>
+              </form>
+            </div>
+          </div>
+</body>
+<!-- </html> -->
